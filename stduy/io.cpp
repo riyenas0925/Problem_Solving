@@ -3,7 +3,18 @@
 using namespace std;
 
 int main(){
-    
+    /*
+        빠른 입출력
+    */
+
+    //fast
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout << "test" << "\n";
+
+    //slow
+    cout << "test" << endl;
+
     /*
         빈 줄이 주어질 수도 있고
         각 줄의 앞 뒤에 공백이 있을 수도 있다.
