@@ -75,3 +75,14 @@ int main(){
     cout << a + b << endl;
 }
 ```
+
+### 종료 조건이 명시되어있지 않은 경우 (EOF)
+```c++
+int main(void) {
+    int a, b;
+
+    while(cin >> a >> b) {
+        cout << a + b << endl;
+    }
+}
+```
