@@ -52,10 +52,16 @@ int binary_search(int *arr, int low, int high, int target) {
 ### binary_search STL
 * 반환 값은 arr ~ arr + n에 있으면 1, 없으면 0
 ```c++
-sort(arr, arr + n)
-binary_search(arr, arr + n, val)
+sort(arr, arr + n);
+binary_search(arr, arr + n, val);
 ```
 
 ### upper_bound
+```c++
+upper_bound(arr, arr + n, val);
+```
 
 ### lower_bound
+```c++
+lower_bound(arr, arr + n, val);
+```
