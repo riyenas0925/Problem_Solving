@@ -15,15 +15,15 @@ int main() {
         cin >> num[i];
     }
 
-    for(int i = 0; i < 8; i++) {
-        if(i != num[i]) {
+    for(int i = 1; i <= 8; i++) {
+        if(i != num[i - 1]) {
             a = 0;
             break;
         }
     }
 
-    for(int i = 0; i < 8; i++) {
-        if((8 - i) != num[i]) {
+    for(int i = 1; i <= 8; i++) {
+        if((9 - i) != num[i - 1]) {
             b = 0;
             break;
         }
