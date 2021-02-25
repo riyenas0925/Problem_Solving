@@ -19,8 +19,13 @@ sort(a.begin(), a.end(), less<int>());      // 오름차순 (default);
 ```
 
 ### 비교함수 이용
-```
-
+```c++
+bool cmp(const pair<ll,ll> &a, const pair<ll,ll> &b) {
+    if(a.second == b.second) {
+        return a.first < b.first;
+    }
+    return a.second < b.second;
+}
 ```
 
 ### 중복 제거
