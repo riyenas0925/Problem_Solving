@@ -47,7 +47,12 @@ string s = to_string(n);
 
 ### 문자열 -> int
 ```c++
-int n1 = stoi("-1234") // -1234
-int n2 = stoi("+1234") // 1234
-int n3 = stoi("1234")  // 1234
+int n1 = stoi("-1234"); // -1234
+int n2 = stoi("+1234"); // 1234
+int n3 = stoi("1234");  // 1234
+```
+
+### 문자열 -> long long
+```c++
+int n = stoll("1234");
 ```
