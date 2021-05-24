@@ -36,12 +36,8 @@ if(cnt == 0) {
 
 ### 에라토스테네스의 체 -> O(NloglogN)
 ```c++
-bool arr[n+1];
+vector<bool> arr(n+1, true);
 int answer = 0;
-
-for(int i = 2; i <= n; i++) {
-    arr[i] = i;
-}
 
 for(int i = 2; i <= n; i++) {
     if(arr[i] == false) continue;

@@ -7,12 +7,8 @@ using namespace std;
 
 
 int solution(int n) {    
-    bool arr[n+1];
+    vector<bool> arr(n+1, true);
     int answer = 0;
-
-    for(int i = 2; i <= n; i++) {
-        arr[i] = i;
-    }
 
     for(int i = 2; i <= n; i++) {
         if(arr[i] == false) continue;
