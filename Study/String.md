@@ -44,3 +44,10 @@ bool isdigit(char c) // 숫자면 true, 숫자가 아니면 false
 ```c++
 string s = to_string(n);
 ```
+
+### 문자열 -> int
+```c++
+int n1 = stoi("-1234") // -1234
+int n2 = stoi("+1234") // 1234
+int n3 = stoi("1234")  // 1234
+```
