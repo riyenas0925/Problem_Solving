@@ -34,6 +34,9 @@ vector<int> a(100);
 sort(a.begin(), b.begin());
 a.erase(unique(a.begin(), a.end()), a.end());
 ```
+```c++
+unordered_set<int> s(nums.begin(), nums.end());
+```
 
 ### pair
 ```c++
