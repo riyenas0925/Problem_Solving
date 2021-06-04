@@ -43,3 +43,9 @@ unordered_set<int> s(nums.begin(), nums.end());
 pair<int, int> p;
 make_pair(1, 1);
 ```
+
+### 최댓값, 최솟값
+```c++
+int nmin = *min_element(v.begin(), v.end());
+int nmax = *max_element(v.begin(), v.end());
+```
