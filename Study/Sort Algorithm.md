@@ -38,3 +38,28 @@ void SelSort(int arr[], int n) {
     }
 }
 ```
+
+### 삽입정렬 (O(n^2))
+```
+void InserSort(int arr[], int n)
+{
+	int i, j;
+	int insData;
+
+	for(i=1; i<n; i++)
+	{
+		insData = arr[i];
+
+		for(j=i-1; j>=0 ; j--)
+		{
+			if(arr[j] > insData) 
+				arr[j+1] = arr[j];
+			else
+				break;
+		}
+
+		arr[j+1] = insData;
+	}
+}
+
+```
