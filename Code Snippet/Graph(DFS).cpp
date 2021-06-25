@@ -1,0 +1,61 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<int> adj[10];
+bool vis[10];
+
+// 연결 그래프 (비재귀)
+void dfs1() {
+    stack<int> s;
+    s.push(1);
+    vis[1] = true;
+    while(!s.empty()) {
+        int cur = s.top();
+        s.pop();
+        cout << cur << ' ';
+        for(int i = 0; i < adj[cur].size(); i++) {
+            int nxt = adj[cur][i];
+            if(vis[nxt]) continue;
+            s.push(nxt);
+            vis[nxt] = true;
+        }
+    }
+}
+
+// 연결 그래프(재귀)
+void dfs_recursion(int cur) {
+    stack<int> s;
+    s.push(1);
+    vis[1] = true;
+    while(!s.empty()) {
+        cout << cur << ' ';
+        for(int i = 0; i < adj[cur].size(); i++) {
+            int nxt = adj[cur][i];
+            if(vis[nxt]) continue;
+            vis[nxt] = true;
+            dfs_recursion(nxt);
+        }
+    }
+}
+
+// 연결 그래프가 아닐때
+void dfs2() {
+    stack<int> s;
+    int v = 9;
+    for(int i = 0; i <= v; i++) {
+        if(vis[i]) continue;
+        s.push(i);
+        vis[i] = true;
+        while(!s.empty()) {
+            int cur = s.top();
+            s.pop();
+            cout << cur << ' ';
+            for(int i = 0; i < adj[cur].size(); i++) {
+                int nxt = adj[cur][i];
+                if(vis[nxt]) continue;
+                s.push(nxt);
+                vis[nxt] = true;
+            }
+        }
+    }
+}
