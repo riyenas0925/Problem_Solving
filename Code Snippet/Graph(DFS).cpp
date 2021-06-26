@@ -5,7 +5,7 @@ vector<int> adj[10];
 bool vis[10];
 
 // 연결 그래프 (비재귀) -> Flood Fill, 순회에서만!!!!!
-void dfs1() {
+void dfs_non_recursion() {
     stack<int> s;
     s.push(1);
     vis[1] = true;
@@ -22,7 +22,7 @@ void dfs1() {
     }
 }
 
-// 연결 그래프(재귀) -> 관념적으로 생각하는 DFS, 순서 정확
+// 연결 그래프 (재귀) -> 관념적으로 생각하는 DFS, 순서 정확
 // vis[1] = ture; dfs(1);
 void dfs_recursion(int cur) {
     cout << cur << ' ';
@@ -34,7 +34,7 @@ void dfs_recursion(int cur) {
     }
 }
 
-// 연결 그래프가 아닐때
+// 비연결 그래프 (비재귀)
 void dfs2() {
     stack<int> s;
     int v = 9;

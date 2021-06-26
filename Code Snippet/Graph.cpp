@@ -2,8 +2,9 @@
 
 using namespace std;
 
+vector<int> adj[10];
+
 int main() {
-    vector<int> adj[10];
     int v, e;   // 정점(Vertex), 간선(Edge)  
     cin >> v >> e;
     for(int i = 0; i < e; i++) {
