@@ -2,40 +2,25 @@
 
 using namespace std;
 
-using ll = unsigned long long;
-
 int main(void) {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-
+    list<char> L;
+    list<char>::iterator t = L.begin();
     string str; cin >> str;
-    ll n; cin >> n;
-
-    list<char> l(str.begin(), str.end());
-    auto idx = l.end();
-    
+    for(char c : str) L.insert(t, c);
+    int n; cin >> n;
     for(int i = 0; i < n; i++) {
-        char com; cin >> com;
-        
-        if(com == 'L') {
-            if(idx != l.begin()) idx--;
+        char c; cin >> c;
+        if(c == 'P') {
+            char val; cin >> val;
+            L.insert(t, val);
         }
-        if(com == 'D') {
-            if(idx != l.end()) idx++;
-        }
-        if(com == 'B') {
-            if(idx != l.begin()) {
-                idx--;
-                idx = l.erase(idx);
-            }
-        }
-        if(com == 'P') {
-            char c; cin >> c;
-            l.insert(idx, c);
-        }
+        if(c == 'L' && t != L.begin()) t--;
+        if(c == 'D' && t != L.end()) t++;
+        if(c == 'B' && t != L.begin()) t = L.erase(--t);
     }
 
-    for(char c : l) cout << c;
-    return 0;
+    for(auto i : L) cout << i;
 }
