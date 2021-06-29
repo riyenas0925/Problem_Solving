@@ -5,5 +5,10 @@
 !.vscode/extensions.json
 !.vscode/c_cpp_properties.json
 *.exe
+
+// 폴더
+Study(Draft)/*
 bin/*
+
+// bits/stdc.h
 bits/stdc.h
