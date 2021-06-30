@@ -3,7 +3,7 @@ using namespace std;
 
 vector<int> adj[10];
 bool vis[10];
-bool dist[10];
+int dist[10];
 
 // 연결 그래프일 경우
 void bfs1() {
