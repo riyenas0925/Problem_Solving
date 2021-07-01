@@ -28,16 +28,6 @@ bool cmp(const pair<ll,ll> &a, const pair<ll,ll> &b) {
 }
 ```
 
-### 중복 제거
-```c++
-vector<int> a(100);
-sort(a.begin(), b.begin());
-a.erase(unique(a.begin(), a.end()), a.end());
-```
-```c++
-unordered_set<int> s(nums.begin(), nums.end());
-```
-
 ## 정렬 구현
 
 ### 버블 정렬 (0(n^2))

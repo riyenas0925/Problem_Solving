@@ -27,12 +27,6 @@ bool isdigit(char c) // 숫자면 true, 숫자가 아니면 false
 bool isalpha(char c) // 알파벳이면 true, 알파벳이 아니면 false;
 ```
 
-### 문자 대소문자 변환
-```c++
-int toupper(int c)  // c가 소문자면 대문자로 변환
-int tolower(int c)  // c가 대문자면 소문자로 변환
-```
-
 ### 숫자 -> 문자열 변환
 ```c++
 string s = to_string(n);
@@ -56,4 +50,16 @@ strod("1234.123")   // double
 ### 문자열 찾기
 ```c++
 int pos = find("문자열", 시작 위치); // 없으면 -1 있다면 시작 위치
+```
+
+### 문자열 대소문자로 변환
+```c++
+transform(str1.begin(), str1.end(), str1.begin(), ::tolower);
+transform(str1.begin(), str1.end(), str1.begin(), ::toupper);
+```
+
+### 문자 대소문자 변환
+```c++
+int toupper(int c)  // c가 소문자면 대문자로 변환
+int tolower(int c)  // c가 대문자면 소문자로 변환
 ```
