@@ -1,8 +1,3 @@
-#include<iostream>
-#include<unordered_map>
-
-using namespace std;
-
 #include <string>
 #include <vector>
 #include <unordered_map>
@@ -10,20 +5,16 @@ using namespace std;
 using namespace std;
 
 int solution(vector<vector<string>> clothes) {
-    int answer = 0;
-    unordered_map<string, vector<string>> um;
+    int answer = 1;
+    unordered_map<string, vector<string>> clothesMap;
     
     for(int i = 0; i < clothes.size(); i++) {
-        um[clothes[i][1]].push_back(clothes[i][0]);
+        clothesMap[clothes[i][1]].push_back(clothes[i][0]);
     }
     
-    for(auto i : um) {
-        for(auto j : i) answer++;
+    for(auto clothes : clothesMap) {
+        answer *= clothes.second.size() + 1;
     }
     
-    return answer;
-}
-
-int main() {
-    solution({{"yellowhat", "headgear"}, {"bluesunglasses", "eyewear"}, {"green_turban", "headgear"}});
+    return answer - 1;
 }
