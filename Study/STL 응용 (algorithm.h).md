@@ -5,7 +5,7 @@
 int pos=find(seoul.begin(),seoul.end(),"Kim") - seoul.begin();
 ```
 
-### 벡터에서 특정 문자열 개수
+### 벡터에서 특정 문자열 개수 세기
 ```c++
 int bn = count(B.begin(), B.end(), "Kim");
 ```
