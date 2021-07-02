@@ -63,3 +63,25 @@ transform(str1.begin(), str1.end(), str1.begin(), ::toupper);
 int toupper(int c)  // c가 소문자면 대문자로 변환
 int tolower(int c)  // c가 대문자면 소문자로 변환
 ```
+
+### 문자열 자르기
+```cpp
+vector<string> split(string str, char delimiter) {
+	vector<string> vs;
+	string temp;
+
+	for (int i = 0; i <= str.length(); i++) {
+		if(str[i] == delimiter || str[i] == '\0') {
+			vs.push_back(temp);
+            //cout << temp << ", ";
+			temp.clear();
+            continue;
+		}
+		if(isalpha(str[i]) || isdigit(str[i]))
+            temp.push_back(str[i]);
+	}
+
+	vs.push_back(temp); 
+	return vs;
+}
+```
