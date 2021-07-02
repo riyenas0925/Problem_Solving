@@ -16,7 +16,7 @@
 3.  해당 칸을 이전에 방문했다면 아무 것도 하지 않고, 처음으로 방문했다면 방문했다는 표시를 남기고 해당 칸을 큐에 넣는다.
 4.  큐의 모든 원소가 빌 때 까지 2를 반복한다.
 
-```
+```cpp
 #define X first
 #define Y second // pair에서 first, second를 줄여서 쓰기 위해서 사용
 int board[502][502] =
@@ -72,7 +72,7 @@ int main(void){
 3.  해당 칸을 이전에 방문했다면 아무 것도 하지 않고, 처음으로 방문했다면 방문했다는 표시를 남기고 해당 칸을 스택에 넣는다.
 4.  스택의 모든 원소가 빌 때 까지 2를 반복한다.
 
-```
+```cpp
 #define X first
 #define Y second // pair에서 first, second를 줄여서 쓰기 위해서 사용
 int board[502][502] =
@@ -112,6 +112,19 @@ int main(void){
             S.push({nx,ny});
         }
     }
+}
+```
+
+### 1차원 배열의 DFS
+```cpp
+void dfs(vector<int> nums, int target, int sum, int idx) {
+    if(idx == nums.size()) {
+        if(sum == target) cnt++;
+        return;
+    }
+    
+    dfs(nums, target, sum + nums[idx], idx + 1);
+    dfs(nums, target, sum - nums[idx], idx + 1);
 }
 ```
 
