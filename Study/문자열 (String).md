@@ -66,6 +66,15 @@ int tolower(int c)  // c가 대문자면 소문자로 변환
 
 ### 문자열 자르기
 ```cpp
+istringstream ss(str);
+string stringBuffer;
+while (getline(ss, stringBuffer, ',')) {
+	cout << stringBuffer) << " ";
+}
+```
+
+### 문자열 자르기
+```cpp
 vector<string> split(string str, char delimiter) {
 	vector<string> vs;
 	string temp;
@@ -77,11 +86,6 @@ vector<string> split(string str, char delimiter) {
 			temp.clear();
             continue;
 		}
-		if(isalpha(str[i]) || isdigit(str[i]))
-            temp.push_back(str[i]);
 	}
-
-	vs.push_back(temp); 
-	return vs;
 }
 ```
