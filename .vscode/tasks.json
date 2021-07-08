@@ -3,6 +3,29 @@
     "tasks": [
         {
             "type": "shell",
+            "label": "python excute",            
+            "command": "python",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "args": [
+                "${file}"
+            ],
+            "group":{
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        },
+        {
+            "type": "shell",
             "label": "g++ build active file",
             "command": "/usr/bin/g++",
             "args": [
@@ -29,16 +52,6 @@
                 "kind": "build",
                 "isDefault": true
             }
-        },
-
-        {
-            "type": "shell",
-            "label": "execute",
-            "command": "cd ${workspaceFolder}/bin && ./${fileBasenameNoExtension}",
-            "group": {
-                "kind": "test",
-                "isDefault": true
-            }
-        },
+        }
     ]
 }
