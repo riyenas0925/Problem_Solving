@@ -1,4 +1,4 @@
-package study;
+package snippet;
 
 import java.io.IOException;
 import java.util.LinkedList;

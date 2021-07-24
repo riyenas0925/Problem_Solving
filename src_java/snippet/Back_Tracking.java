@@ -1,4 +1,4 @@
-package study;
+package snippet;
 
 public class Back_Tracking {
     static int n;
