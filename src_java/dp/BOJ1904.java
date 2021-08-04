@@ -6,29 +6,33 @@ import java.io.InputStreamReader;
 
 public class BOJ1904 {
     /*
-    1(1) : 1
-    2(2) : 00 11
-    3(3) : 001 100 111
-    4(5) : 0000 1100 0011 1111 1001
-    00100 10000 11100
-    00001 11001 00111 11111 10011
-
+    N = 1 -> 1
+    N = 2 -> 00, 11
+    N = 3 -> 001 100, 111
+    N = 4 -> 1100 1111 1001 1100 1111
+    N = 5 -> 00001 00100 00111 11100 11111 11001 11100 11111
      */
-    public static int cache[] = new int[1000001];
-    public static int dp(int n) {
-        if(n == 1) {
-            return 1;
-        } else if(n == 2) {
-            return 2;
-        } else if(cache[n] != 0) {
-            return cache[n];
-        } else {
-            return cache[n] = (dp(n - 1) + dp(n-2)) % 15746;
+
+    static int[] cache;
+    static int n;
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+    static void pro() {
+        cache[1] = 1;
+        cache[2] = 2;
+        for(int i = 3; i <= n; i++) {
+            cache[i] = (cache[i-1] + cache[i-2]) % 15746;
         }
+        System.out.println(cache[n]);
     }
+
+    static void input() throws IOException {
+        n = Integer.parseInt(br.readLine());
+        cache = new int[1000000 + 1];
+    }
+
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int num = Integer.parseInt(br.readLine());
-        System.out.println(dp(num));
+        input();
+        pro();
     }
 }
