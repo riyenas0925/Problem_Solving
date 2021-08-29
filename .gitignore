@@ -43,3 +43,6 @@ hs_err_pid*
 build
 out
 *.iml
+
+# ignore
+/src_java/coding_test/*
