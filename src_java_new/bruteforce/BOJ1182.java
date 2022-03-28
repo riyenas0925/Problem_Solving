@@ -3,7 +3,6 @@ package bruteforce;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.List;
 import java.util.StringTokenizer;
 
 public class BOJ1182 {
@@ -13,11 +12,10 @@ public class BOJ1182 {
     static boolean[] sel;
     static BufferedReader br;
     static StringTokenizer st;
-    static StringBuilder sb;
 
     public static void main(String[] args) throws IOException {
         input();
-        pro(1);
+        pro(1, 0);
         if(s == 0) result--;
         System.out.println(result);
     }
@@ -34,19 +32,14 @@ public class BOJ1182 {
         result = 0;
     }
 
-    private static void pro(int k) {
+    private static void pro(int k, int sum) {
         if(k == n + 1) {
-            int sum = 0;
-            for(int i = 1; i <= n; i++) {
-                if(sel[i] == true) sum += arr[i];
-            }
             if(sum == s) result++;
         } else {
-            for(boolean cand : List.of(true, false)) {
-                sel[k] = cand;
-                pro(k + 1);
-                sel[k] = false;
-            }
+            // Include
+            pro(k + 1, sum + arr[k]);
+            // Not Include
+            pro(k + 1, sum);
         }
     }
 }
