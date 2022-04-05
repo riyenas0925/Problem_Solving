@@ -3,14 +3,12 @@ package graphsearch;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class BOJ1260 {
 
     static int n, m, v;
-    static int[][] adj;
+    static ArrayList<Integer>[] adj;
     static boolean[] visit;
     static BufferedReader br;
     static StringTokenizer st;
@@ -23,13 +21,19 @@ public class BOJ1260 {
         m = Integer.parseInt(st.nextToken());
         v = Integer.parseInt(st.nextToken());
 
-        adj = new int[n + 1][n + 1];
-        for(int i = 0; i < m; i++) {
+        adj = new ArrayList[n + 1];
+        for(int i = 1; i <=n; i++) {
+            adj[i] = new ArrayList<>();
+        }
+        for(int i = 1; i <= m; i++) {
             st = new StringTokenizer(br.readLine());
             int x = Integer.parseInt(st.nextToken());
             int y = Integer.parseInt(st.nextToken());
-            adj[x][y] = 1;
-            adj[y][x] = 1;
+            adj[x].add(y);
+            adj[y].add(x);
+        }
+        for(int i = 1; i <= n; i++) {
+            Collections.sort(adj[i]);
         }
 
         sb = new StringBuilder();
@@ -44,8 +48,7 @@ public class BOJ1260 {
             x = q.poll();
             sb.append(x).append(' ');
 
-            for(int y = 1; y <= n; y++) {
-                if(adj[x][y] == 0) continue;
+            for(int y : adj[x]) {
                 if(visit[y] == true) continue;
                 q.add(y);
                 visit[y] = true;
@@ -57,8 +60,7 @@ public class BOJ1260 {
         visit[x] = true;
         sb.append(x).append(' ');
 
-        for(int y = 1; y <= n; y++) {
-            if(adj[x][y] == 0) continue;
+        for(int y : adj[x]) {
             if(visit[y] == true) continue;
             dfs(y);
         }
