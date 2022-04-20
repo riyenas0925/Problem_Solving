@@ -2,24 +2,25 @@
 
 ## OJ 분류
 ```
-BOJ : Baekjoon Online Judge
-Prog : Programmers
-SWEA : SW Expert Academy
-Algo : AlgoSpot
-Leet : LeetCode
-Codi : Codility
+boj  : Baekjoon Online Judge
+prog : Programmers
+swea : SW Expert Academy
+algo : AlgoSpot
+leet : LeetCode
+codi : Codility
+cote : CodeTree
 ```
 
 ## 커밋 컨벤션
 ```
 [OJ분류](문제 분류): 문제 이름 (문제번호/ 난이도:선택)
-ex) BOJ(DFS) : 유기농 배추 (1012/ 실버 2)
-ex) BOJ(백트래킹, DFS) : 알파벳 (1987)
+ex) boj(DFS) : 유기농 배추 (1012/ 실버 2)
+ex) boj(백트래킹, DFS) : 알파벳 (1987)
 ```
 
 ## 실행 환경
 ```
-CPP : VSCode
+CPP  : VSCode
 JAVA : IntelliJ
 ```
 
